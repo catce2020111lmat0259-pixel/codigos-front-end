@@ -12,15 +12,18 @@ let altura = getById('altura');
 //calcular imc
 getById('calcularIMC').addEventListener('click', () => {
     let IMC = Number(peso.value)/(Number(altura.value)**2);
+    let resultado;
     if (IMC < 18.5) {
-        getById('resultado1').innerText = 'Abaixo do peso';
-    } if (IMC >= 18.5 && IMC <= 24.9) {
-        getById('resultado1').innerText = 'Peso normal';
-    } if (IMC >= 25 && IMC <= 29.9) {
-        getById('resultado1').innerText = 'Sobrepeso';
+        resultado = 'Abaixo do peso';
+    } else if (IMC >= 18.5 && IMC <= 24.9) {
+        resultado = 'Peso normal';
+    } else if (IMC >= 25 && IMC <= 29.9) {
+        resultado = 'Sobrepeso';
     } else {
-        getById('resultado1').innerText = 'Obesidade';
+        resultado = 'Obesidade';
     }
+    getById('resultado1').innerText = `IMC: ${IMC.toFixed(2)} – ${resultado}`;
+
 });
 
 //questão 02
@@ -135,4 +138,5 @@ getById('verificarNumero').addEventListener('click', () => {
         break;
     };
     getById('resultado5').innerText = mensagemVerificacao;
+
 });
