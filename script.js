@@ -134,10 +134,11 @@ getById('verificarNumero').addEventListener('click', () => {
             mensagemVerificacao = 'Menor que o número!';
             break;
         } else {
-            mensagemVerificacao = 'Acertou!';
+            mensagemVerificacao = 'Acertou! Um novo número foi sorteado!';
             numeroSorteado = sortearNumero(); // sorteia novo número
             break;
         }
     }
     getById('resultado5').innerText = mensagemVerificacao;
 });
+
