@@ -123,20 +123,21 @@ let numeroSorteado = sortearNumero();
 
 //verificar número
 getById('verificarNumero').addEventListener('click', () => {
-    let mensagemVerificacao;
     let numero = Number(numeroDigitado.value);
+    let mensagemVerificacao;
+    
     while (true) {
         if (numero > numeroSorteado) {
             mensagemVerificacao = 'Maior que o número!';
+            break;
         } else if (numero < numeroSorteado) {
             mensagemVerificacao = 'Menor que o número!';
+            break;
         } else {
             mensagemVerificacao = 'Acertou!';
-            numeroSorteado = sortearNumero(); //sorteia novo número
+            numeroSorteado = sortearNumero(); // sorteia novo número
             break;
         }
-        break;
-    };
+    }
     getById('resultado5').innerText = mensagemVerificacao;
-
 });
